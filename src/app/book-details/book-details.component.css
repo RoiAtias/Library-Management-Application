@@ -1,0 +1,39 @@
+.borderLeft {
+    border-right: 1px solid;
+  }
+
+img {
+    height: 66%;
+    width: 100%;
+}
+
+.requried:after{
+  content: " *";
+  color: red;
+}
+
+ :host ::ng-deep body .ui-dialog.ui-dialog-content{
+  padding: none !important;
+} 
+
+ :host ::ng-deep .BookDetailsContainer{
+  padding: 15px  !important;
+}
+
+.mrg1bottom{
+  margin-bottom: 17px;
+}
+.pad7b{
+    padding-bottom: 7%;
+}
+.mar30l {
+    margin-left: 30%;
+}
+.portfolio-item {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  max-width: 25rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}

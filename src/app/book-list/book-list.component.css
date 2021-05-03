@@ -1,0 +1,11 @@
+.center { margin: auto; max-width: 300px;}
+
+
+.margin0{
+  margin-right: unset !important;
+  margin-left: unset !important;
+}
+
+.pad2 {
+    padding: 2%;
+}

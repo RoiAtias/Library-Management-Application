@@ -1,0 +1,82 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "Harry Potter and the Philosophers Stone",
+        "AuthorName": "JK Rowling",
+        "catalogId": 1,
+        "publishDate": "2021-04-29T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/Harry_Potter.jpg"
+    },
+    {
+        "bookId": 2,
+        "bookName": "The Lord of the Rings",
+        "AuthorName": "JRR Tolkien",
+        "catalogId": 1,
+        "publishDate": "2021-03-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/The_Lord_Of_The_Rings.jpg"
+    },
+    {
+        "bookId": 3,
+        "bookName": "Pride and Prejudice",
+        "AuthorName": "Jane Austen",
+        "catalogId": 1,
+        "publishDate": "2021-03-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/Pride_And_Prejudice.jpg"
+    },
+    {
+        "bookId": 4,
+        "bookName": "To Kill a Mockingbird",
+        "AuthorName": "Harper Lee",
+        "catalogId": 1,
+        "publishDate": "2021-03-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Great Gatsby",
+        "AuthorName": "F Scott Fitzgerald",
+        "catalogId": 2,
+        "publishDate": "2019-03-20T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 6,
+        "bookName": "The Diary Of A Young Girl",
+        "AuthorName": "Anne Frank",
+        "catalogId": 3,
+        "publishDate": "2018-03-14T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 7,
+        "bookName": "The Book Thief",
+        "AuthorName": "Markus Zusak",
+        "catalogId": 2,
+        "publishDate": "2020-03-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 8,
+        "bookName": "The Hobbit",
+        "AuthorName": "JRR Tolkien",
+        "catalogId": 1,
+        "publishDate": "2021-01-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 9,
+        "bookName": " Little Women",
+        "AuthorName": "Louisa May Alcott",
+        "catalogId": 3,
+        "publishDate": "2021-02-10T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    },
+    {
+        "bookId": 10,
+        "bookName": "Fahrenheit",
+        "AuthorName": "Ray Bradbury",
+        "catalogId": 2,
+        "publishDate": "2021-03-11T18:25:43.511Z",
+        "coverUrl": "../../assets/Images/NoImage.png"
+    }
+]

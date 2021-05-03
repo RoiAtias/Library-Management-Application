@@ -1,0 +1,85 @@
+
+
+<div class="row center pad2">
+    <div class="col-sm-12">
+        <h1>Books list</h1>
+    </div>
+</div>
+
+<div class="row margin0">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-sm-8">
+        <p-table scrollable="true" scrollHeight="450px" [resizableColumns]="true" styleClass="p-datatable-striped" 
+        selectionMode="single" [(selection)]="selectedBook" (onRowSelect)="onRowSelect()" [loading]="loading"
+        [columns]="cols" [value]="booksArray" sortMode="multiple" #dt>
+    
+        <ng-template pTemplate="caption">
+            <div style="text-align: left">        
+                <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            </div>
+        </ng-template>
+    
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                        ariaLabelDesc="Activate to sort in descending book"
+                        ariaLabelAsc="Activate to sort in ascending book">
+                    </p-sortIcon>
+                </th>
+            </tr>
+            <!-- <tr>
+                <th *ngFor="let col of columns" [ngSwitch]="col.fieldType" style="background-color: white ;">
+    
+                    <p-calendar #cal appendTo="body" *ngSwitchCase="FieldTypeEnum.DATE" styleClass="p-column-filter" [placeholder]="">
+                    </p-calendar>
+    
+    
+                    <input *ngSwitchDefault pInputText type="text"
+                        (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+    
+                </th>
+            </tr> -->
+        </ng-template>
+    
+        <ng-template pTemplate="body" let-bookData let-columns="columns">
+            <tr [pSelectableRow]="bookData">
+                <td *ngFor="let col of columns">
+                    <div *ngIf="!col.field.includes('Date')">
+                        {{bookData[col.field]}}
+                    </div>
+    
+                    <div *ngIf="col.field.includes('Date')">
+                        {{bookData[col.field]| date:'dd.MM.yyyy'}}
+                    </div>
+    
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage" let-columns>
+            <tr>
+                <td [attr.colspan]="columns.length">
+                    No records found
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+            <div style="text-align:left">
+                <button type="button" pButton icon="pi pi-plus" (click)="onAddContact()" label="Add"></button>
+            </div>
+        </ng-template>  
+    </p-table>
+    </div>
+
+    <div class="col-sm-2"> 
+    </div>
+</div>
+
+
+
+

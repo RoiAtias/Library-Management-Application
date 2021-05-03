@@ -1,0 +1,122 @@
+<div class="BookDetailsContainer">
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <div class="row pad7b">
+                <div class="col-sm-11">
+                    <h2>Details</h2>
+                </div>
+                <div class="col-sm-1">
+                    <i *ngIf="selectedMode == this.formMode.UPDATE" (click)="onEdit()" class="fa fa-pencil "></i>
+                </div>
+            </div>
+
+            <form [formGroup]="form">
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label class="requried" for="bookName">Name:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <label *ngIf="!isEdit" class="mrg1bottom">{{book.bookName}}</label>
+                        <input *ngIf="isEdit" type="text" class="form-control" id="bookName" name="bookName"
+                            formControlName="bookName" [ngClass]="{ 'is-invalid': submitted && f.bookName.errors }" />
+
+                        <div *ngIf="submitted && f.bookName.errors" class="invalid-feedback">
+                            <div *ngIf="f.bookName.errors.required">Name is Mandatory</div>
+                            <div *ngIf="f.bookName.errors.pattern">Name must be in letters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label class="requried" for="AuthorName">Author Name:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <label *ngIf="!isEdit" class="mrg1bottom">{{book.AuthorName}}</label>
+                        <input *ngIf="isEdit" class="form-control" id="AuthorName" formControlName="AuthorName"
+                            [ngClass]="{ 'is-invalid': submitted && f.AuthorName.errors }" />
+                        <div *ngIf="submitted && f.AuthorName.errors" class="invalid-feedback">
+                            <div *ngIf="f.AuthorName.errors.required">Author Name is Mandatory</div>
+                            <div *ngIf="f.AuthorName.errors.pattern">Author Name must be in letters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label class="requried" for="catalogId">Catalog Id:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <label *ngIf="!isEdit" class="mrg1bottom">{{book.catalogId}}</label>
+                        <input *ngIf="isEdit" class="form-control" id="catalogId" formControlName="catalogId"
+                            [ngClass]="{ 'is-invalid': submitted && f.catalogId.errors }" />
+                        <div *ngIf="submitted && f.catalogId.errors" class="invalid-feedback">
+                            <div *ngIf="f.catalogId.errors.required">Catalog ID is Mandatory</div>
+                            <div *ngIf="f.catalogId.errors.pattern">Catalog ID must be in numbers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label for="publishDate">Publish Date:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <label *ngIf="!isEdit" class="mrg1bottom">{{book.publishDate | date: 'dd/MM/yyyy'}}</label>
+                        <input *ngIf="isEdit" type="date" id="publishDate" name="publishDate" class="form-control"
+                            formControlName="publishDate">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="coverUrl">Cover Url:</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <label *ngIf="!isEdit" class="mrg1bottom">{{book.coverUrl}}</label>
+                        <input *ngIf="isEdit" class="form-control" id="coverUrl" formControlName="coverUrl" />
+                    </div>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+        <div class="col-sm-1">
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="row pad7b">
+                <div class="col-sm-11">
+                    <h2>Cover</h2>
+                </div>
+            </div>
+            <img *ngIf="book.coverUrl" class="portfolio-item" [src]=[book.coverUrl]>
+            <img *ngIf="!book.coverUrl" class="portfolio-item" [src]="noPreviewPath">
+        </div>
+
+        <div class="col-sm-1">
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="row">
+        <div class="col-sm-9"></div>
+        <div class="col-sm-1">
+            <button *ngIf="selectedMode == this.formMode.UPDATE" type="button" class="ui-button-danger" pButton
+                icon="pi pi-times" (click)="onDelete()" label=" Delete"></button>
+        </div>
+        <div class="col-sm-1">
+            <button *ngIf="isEdit" type="button" pButton icon="pi pi-check" (click)="onSave()" class="mar30l"
+                label=" Save"></button>
+        </div>
+    </div>
+</div>
